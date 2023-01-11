@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "firstapp.apps.FirstappConfig",
+    "goin_backend.apps.Goin_backendConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -79,7 +79,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "postgres",
         "USER": "postgres",
-        "PASSWORD": "admin",
+        "PASSWORD": "postgres",
         "HOST": "localhost",
         "PORT": "5432"
     }
