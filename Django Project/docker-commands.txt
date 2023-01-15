@@ -1,0 +1,25 @@
+docker build --tag goin_backend . #image building
+docker run --publish 8000:8000 goin_backend #container building
+
+docker-compose build #building docker image
+docker-compose run --rm app(name of container) 
+allows to run commands berfore running the container
+
+
+
+#file for defining additional services to our container
+
+version: '3.8' 
+services:
+      app:
+      build: . #all files in current folder where we are
+      volumes: 
+        - .:/app #connection (copy) between the current folder and container folder
+      ports:
+        - 8000:8000
+      image: app:goin_backend
+      container_name: goin_backend_container
+      command: python3 manage.py runserver 0.0.0.0:8000
+
+
+
