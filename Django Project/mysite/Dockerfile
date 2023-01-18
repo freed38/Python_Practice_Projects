@@ -2,7 +2,7 @@
 
 
 # pull the official base image (linux light weight os)
-FROM python:3.8-slim-buster
+FROM python:3.8
 
 #everything will be sent to terminal in order to see some logs
 
@@ -21,7 +21,7 @@ RUN pip3 install -r requirements.txt
 
 #copying all the thing in the folder (no need with docker compose)
 
-#COPY . /app
+COPY . /app
 
 #running the final comannd (no need with docker compose)
 
