@@ -1,7 +1,7 @@
 from django.db import models
 
 class Location(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=256)
     desc = models.TextField("Description")
     url = models.CharField(max_length=1024)
@@ -9,18 +9,18 @@ class Location(models.Model):
     image_url = models.CharField(max_length=1024)
 
 class GenreTag (models.Model): 
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=64)
 
 class Band (models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=512)
     desc = models.TextField(null=True) 
     url = models.CharField(max_length=1024,null=True)
     image_url = models.CharField(max_length=1024,null=True)
 
 class Event (models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     band_id = models.ForeignKey(Band, on_delete=models.CASCADE)
     location_id = models.ForeignKey(Location, on_delete=models.CASCADE)
     title = models.CharField(max_length=512)
